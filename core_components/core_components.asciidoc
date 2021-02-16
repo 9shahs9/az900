@@ -9,9 +9,9 @@
 ....
 @startuml
 
-ManagementGroup ||-|{ Subscription #white
-Subscription ||--|{ ResourceGroup #white
-ResourceGroup ||-|{ Resource #white
+ManagementGroup ||-|{ Subscription 
+Subscription ||--|{ ResourceGroup 
+ResourceGroup ||-|{ Resource 
 
 @enduml
 .... 
@@ -33,9 +33,9 @@ ResourceGroup ||-|{ Resource #white
 ---- 
 @startuml 
 
-    BillingAccount ||-{ BillingProfile  #white
-    BillingProfile ||--{ InvoiceSection #white
-    InvoiceSection ||-{ Subscription #white
+BillingAccount ||-{ BillingProfile  
+BillingProfile ||--{ InvoiceSection 
+InvoiceSection ||-{ Subscription 
 
 @enduml
 ---- 
