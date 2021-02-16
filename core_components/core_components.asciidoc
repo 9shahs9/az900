@@ -4,9 +4,9 @@
 
 == Management Groups, Subscriptions, Resource Groups and Resources.
 
+[plantuml, format="png", id="OrgHierarchy", width="600px"]
+----
 
-[plantuml,OrgHierarchy,svg]
-....
 @startuml
 
 ManagementGroup ||-|{ Subscription 
@@ -14,8 +14,7 @@ Subscription ||--|{ ResourceGroup
 ResourceGroup ||-|{ Resource 
 
 @enduml
-.... 
-
+---- 
 
 === _Azure Subscription_
     
