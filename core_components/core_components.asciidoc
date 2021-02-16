@@ -30,7 +30,7 @@ ResourceGroup ||-|{ Resource
     5) Customise billing on subscriptions
 
 [plantuml,Billing,svg]
----- 
+....
 @startuml 
 
 BillingAccount ||-{ BillingProfile  
@@ -38,4 +38,4 @@ BillingProfile ||--{ InvoiceSection
 InvoiceSection ||-{ Subscription 
 
 @enduml
----- 
+.... 
