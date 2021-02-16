@@ -1,0 +1,41 @@
+= Core Azure architectural Components
+:showtitle: 
+
+
+== Management Groups, Subscriptions, Resource Groups and Resources.
+
+
+[plantuml,OrgHierarchy,svg]
+....
+@startuml
+
+ManagementGroup ||-|{ Subscription #white
+Subscription ||--|{ ResourceGroup #white
+ResourceGroup ||-|{ Resource #white
+
+@enduml
+.... 
+
+
+=== _Azure Subscription_
+    
+    1) Subscription requires an Azure active account.
+    2) Azure active account must be either managed by Azure AD or by folder trusted by Azure AD.
+    3) Subscription are bounded by either Billing boundaries or Access control boundaries.
+    4) Create addition Subscriptions in below cases : 
+        a) Differentiating *_Environments_*
+        b) *_Organisational Structures_* 
+        c) *_Billing_*
+        d) *_Subscription Limits_*
+    5) Customise billing on subscriptions
+
+[plantuml,Billing,svg]
+---- 
+@startuml 
+
+    BillingAccount ||-{ BillingProfile  #white
+    BillingProfile ||--{ InvoiceSection #white
+    InvoiceSection ||-{ Subscription #white
+
+@enduml
+---- 
