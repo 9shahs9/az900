@@ -1,0 +1,67 @@
+= Azure Regions & Availability Zones.
+:showtitle:
+
+== Azure Regions
+
+=== [.underline]#Advantages#
+
+* Scalability & Resilience
+* Data Residency 
+
+
+image::https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-architecture-fundamentals/media/regions-expanded.png#lightbox[Azure Regions]
+
+.Table Azure Regions 
+|===
+
+| Type  | North America | South America | South Africa | Europe | Asia | Australia.
+
+| Available Region
+| 11 
+| 1 
+| 2 
+| 10 
+| 13
+| 4
+
+| Availability Zones
+| 4
+| 0
+| 0
+| 4
+| 2
+| 0
+
+| Announced Regions
+| 1
+| 0
+| 0
+| 3
+| 2
+| 1
+
+| Totals
+| *16*
+| *1*
+| *2*
+| *17*
+| *17* 
+| *5*
+
+|===
+
+
+== [.underline]#Relationships#
+
+[plantuml,id='Regions_AZs',format="png",width="600px"]
+---- 
+
+@startuml
+
+Datacenters }|-|| AzureRegion
+
+
+
+@enduml 
+
+---- 
