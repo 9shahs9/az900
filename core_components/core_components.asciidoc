@@ -30,9 +30,10 @@ ResourceGroup ||-|{ Resource
         b) *_Organisational Structures_* 
         c) *_Billing_*
         d) *_Subscription Limits_*
-    5) Customise billing on subscriptions
+    5) Customise billing on subscriptions using BillingProfiles and InvoiceSections
 
-[plantuml,Billing,svg]
+
+[plantuml,id="Billing",format="png",width="600px"]
 ....
 @startuml 
 
@@ -42,3 +43,90 @@ InvoiceSection ||-{ Subscription
 
 @enduml
 .... 
+
+=== ManagementGroup 
+
+    * Group *Subscriptions* and *child ManagementGroup* into containers called ManagementGroup
+    * Apply constraints at ManagementGroup, which apply to all subscriptions within it.
+    * All subscriptions within a ManagementGroup must trust same Azure AD tenant.
+    
+image::https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-architecture-fundamentals/media/management-groups-and-subscriptions.png[ManagementGroups and Subscriptions relationship]
+
+
+[.underline]#_Key constraints to note_#
+
+* 10000 ManagementGroups supported in single *directory*
+* Maximum depth of a ManagementGroup is 6.
+* Each ManagementGroup and Subscription can have one and only one parent.
+* A ManagementGroup can have any number of children.
+* All subscriptions and management groups are within a single hierarchy in each directory.
+
+
+=== ResourceGroup
+
+* ResourceGroup cannot be nested.
+* All Resources must belong to one and only one ResourceGroup.
+* Deleting a ResourceGroup will delete all resources within
+* Can apply RBAC on ResourceGroup, which is applied to all resources within it.
+
+
+=== Azure Resource Manager
+
+Deployment and Management service of Azure resources.
+ARM can be accessed via : 
+
+* Azure CLI
+* Azure PowerShell 
+* REST clients
+* Azure Portal
+* Client SDKs [Python, Java, etc.] 
+
+==== Advantages 
+* ARM Templates to manage resources. Infrastructure as Code.
+* ARM Templates are Json files.
+* Deploy all resources within solution as a group. 
+* Define dependencies between resources.
+* Apply RBAC, tags to all services.
+* View billing based on similarly tagged resources. 
+
+
+==== Comparison of ARM Templates and Terraform 
+
+.Table ARM Template vs Terraform 
+|===
+|Feature |ARM Template | Terraform
+
+| Create Resources
+| Yes
+| Yes
+
+| Create Resource Groups
+| Yes
+| Yes
+
+| Create RG in a Subscription
+| Yes
+| Yes
+
+| Deploy Resources at once.
+| Yes
+| Yes
+
+| Dependencies between resources
+| Yes
+| Yes
+
+| Add Tags to resources / RGs.
+| Yes 
+| ??
+
+| Add Roles to resources / ResourceGroups
+| Yes
+| ??
+
+| Access control on subscriptions
+| Yes
+| ??
+
+|===
+
