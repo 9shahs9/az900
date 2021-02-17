@@ -1,0 +1,100 @@
+= Azure compute services.
+
+== [.underline]#Overview# 
+
+=== Virtual machines
+
+* Full control of OS and environment.
+* IaaS solution.
+
+=== Virtual machine Scale sets
+
+* Deploy and scale Identical VMs.
+    e.g. Cluster of VMs running Kafka.
+
+=== Containers and Kubernetes
+
+* Used to deploy container applications.
+
+=== App Services
+
+* Quickly build, deploy and scale applications
+    ** Web applications
+    ** Mobile applications
+    ** API applications.
+* PaaS offering.
+* Meet Performance, Scalability, Security and Compliance requirements.
+
+=== Functions
+
+* Only interested in the code running and not worried about underlying platform or infrastructure.
+* Work done in response to Event e.g.
+    ** RESTful API.
+    ** Timer
+    ** Message from another Azure service.
+
+
+== Virtual Machines
+
+=== [.underline]#VM#
+
+* No need of Physical Infrastructure
+* You need to configure, update and maintain the Software that runs on VMs.
+* VM is created from a template [template contains OS + S/ws that run on it.]
+
+=== [.underline]#VM Scale Set#
+
+* Group of identical and *Load balanced* VMs.
+* Centrally configure, update and manage large number of VMs.
+* Scale based on either demand or schedule.
+* Ideal to build large scale worksets for Compute, BigData or Container workloads.
+
+
+=== [.underline]#Azure Batch#
+
+* Enables large scale parallel and High Performance Compute jobs.
+* Can scale to tens, hundreds or thousands of VMs.
+* Azure Batch does the following
+    ** Starts a pool of compute VMs for you.
+    ** Installs applications and staging data.
+    ** Runs jobs with as many tasks as you have.
+    ** Identifies failures.
+    ** Requeues work.
+    ** Scales down the pool as work completes.
+* Common application workloads include 
+    ** image and video rendering, 
+    ** media transcoding, 
+    ** engineering simulations, 
+    ** Monte Carlo simulations, and 
+    ** software test execution
+
+== Containers
+
+Two solutions exists for Managing the containers in Azure. 
+
+=== [.underline]#Azure Container Instances#
+
+* Upload your container.
+* ACI runs the container with scalability.
+
+=== [.underline]#Azure Kubernetes Services#
+
+* Automating, Managing and Interacting with large no.of containers is Orchestration.
+* AKS is complete orchestration service.
+
+== Azure App services
+
+Build the following types of applications.
+Deploy and scale as required by load demand.
+
+* WebApps.
+* API Apps.
+* WebJobs
+* Mobile Apps.
+
+
+== Azure Functions
+
+* Triggers define how function is invoked.
+* Bindings provide a declarative way to connect to services from within the code
+
