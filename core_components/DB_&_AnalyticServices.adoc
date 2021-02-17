@@ -1,0 +1,173 @@
+= Azure Database and Analytic Services
+
+== Azure Cosmos DB
+
+=== [.underline]#Advantages#
+
+* Globally distributed.
+* Multi-model database Service.
+* Multi-API access. 
+* Scale throughput & Storage across regions
+* Fast, single-digit-millisecond data access using APIs.
+* Comprehensive SLAs for Throughput, consistency, latency and availability.
+
+* Supports schema-less data.
+* Stores data in Atom-record-sequence (ARS) format. https://stackoverflow.com/questions/44304947/what-does-it-mean-that-azure-cosmos-db-is-multi-model[Details].
+
+
+== Azure SQL Database.
+
+=== [.underline]#Advantages#
+
+* Based on Microsoft SQL Server.
+* Relational database
+* PAAS DB engine.
+* Handles most of the DBA activities
+    ** upgrading
+    ** patching
+    ** backups
+    ** monitoring without user involvement.
+* 99.99% availability.
+* Advanced query processing features
+    ** High-performance query processing
+    ** in-memory query processing
+    ** intelligent query processing
+* Newest features of MS SQL Server are first releates to Azure SQL Database
+* On-prem SQL databases can be migrated to SQL Database using *Azure Database Migration Service*.
+
+
+== Azure SQL Managed Instance.
+
+=== [.underline]#Advantages#
+* Based on Microsoft SQL Server.
+* Relational database
+* PAAS DB engine.
+* Handles most of the DBA activities
+    ** upgrading
+    ** patching
+    ** backups
+    ** monitoring without user involvement.
+* 99.99% availability.
+* On-prem SQL databases can be migrated to SQL Database using *Azure Database Migration Service*.
+
+
+.Table "Comparison of Azure SQL DB and Azure Managed Instance"
+|=== 
+
+|Feature | Azure SQL Database | Azure Managed Instance
+
+| Relational DB
+| Yes
+| Yes
+
+| SLA
+| 99.99% availability
+| 99.99% availability
+
+| PAAS Managed DBA activities
+| Yes
+| Yes 
+
+| Colation 
+| *SQL_Latin1_General_CP1_CI_AS* only
+| Multiple supported.
+
+| Migration
+| Azure Database Migraiton Services
+| Azure Database Migraiton Services
+
+|=== 
+
+https://docs.microsoft.com/en-us/azure/azure-sql/database/features-comparison[Official Comparison]
+
+
+== Azure database for MySQL
+
+=== [.underline]#Features#
+
+* Based on MySQL community edition v5.6, v5.7 and v8.0
+* SLA of 99.99% availability
+* Point-in-time restore upto 35 days in past. [default].
+* Built-in high availability with no additional cost.
+* Predictable performance and inclusive, pay-as-you-go pricing.
+* Scale as needed, within seconds.
+* Ability to protect sensitive data at-rest and in-motion.
+* Automatic backups.
+* Enterprise-grade security and compliance.
+* Migration using Azure Database Migration Services.
+
+
+== Azure database for PostgreSQL
+
+=== [.underline]#Features#
+
+* Built-in high availability with no additional cost.
+* Simple and flexible pricing.
+* Software patching, backups, monitoring and security. [based on tier]
+* Highly scalable (up or down).
+* Adjustable automatic backups and point-in-time-restore for up to 35 days.
+* Ability to protect sensitive data at-rest and in-motion.
+* Available in two deployment options
+    ** Single Server
+        *** Default features along with
+        *** Verticle Scaling.
+        *** Three pricing Tiers (Basic, General Purpose and Memory Optimised)
+
+    ** Hypderscale (Citus)
+        *** Horizontally scales queries
+        *** Uses Sharding for Horizontal scalability.
+        *** Recommended for workloads with >= 100 GB Data.
+        *** Multi-tenant applications supported.
+        *** Real-time operational analytics.
+        *** High throughput transactional workloads.
+        *** Run distributed queries with Standard conneciton libraries with minimal changes.
+
+== Big Data and Analytics
+
+=== [.underline]#Azure Synapse Analytics#
+
+==== [.underline]#Key Features#
+
+* Query using serverless or Provisioned resources. 
+* Unified approach to ingest, prepare, manage and serve data for BI and ML needs.
+* Microsoft homegrown technology.
+
+
+=== [.underline]#Azure HD Insights#
+
+==== [.underline]#Key Features#
+
+* Run Popular open source frameworks
+    ** Apache Spark
+    ** Apache Hadoop
+    ** Apache Kafka
+    ** Apache HBase
+    ** Apache Storm
+    ** MachineLearning services.
+* Scenarios supported
+    ** ETL,
+    ** Datawarehousing
+    ** MachineLearning & 
+    ** IOT.
+
+
+=== [.underline]#Azure Databricks#
+
+==== [.underline]#Key Features#
+
+* Build AI solutions
+* Unlock insights from your data.
+* Set up Apache Spark environment in minutes
+* Autoscale and Collaborate
+* Supports Python, Scala, R, Java and SQL.
+* Supports Datascience frameworks & libraries like Tensorflow, PyTorch and scikit-learn.
+
+
+=== [.underline]#Azure Data Lake Analytics#
+
+==== [.underline]#Key Features#
+
+* On-demand analytics job service.
+* Just write queries to transform data and extract insights.
+* Automatically sets the compute required to run the job.
+* Pay for the job when it is running only. #Cost-effective.

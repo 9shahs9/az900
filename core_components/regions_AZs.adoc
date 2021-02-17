@@ -1,13 +1,13 @@
 = Azure Regions & Availability Zones.
 :showtitle:
 
-== Azure Regions
+== [.underline]#Azure Regions#
 
 === [.underline]#Advantages#
 
 * Scalability & Resilience
 * Data Residency 
-
+* Special Regions for legal, Gov and Partner purposes.
 
 image::https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-architecture-fundamentals/media/regions-expanded.png#lightbox[Azure Regions]
 
@@ -51,6 +51,23 @@ image::https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-architect
 |===
 
 
+== [.underline]#Availability Zones#
+
+* AZ is collection of DCs
+* An AZ has independent Power, Network and Cooling
+* Not every region has support for Availability Zones.
+* If a Region has AZs then it would have 3 or more AZs in it.
+* Zonal Services : Azure doesn't replicate these services automatically.
+* Zone Redundant Services : Azure Platform replicates automatically across zones for availability. e.g. Storage, SQL Databases, etc.
+
+
+== [.underline]#Azure Region Pairs#
+
+* Each Region is always paired with another region in same Geography.
+* Minimum distance between regions in Region pair is atleast (>=) 300 miles.
+
+
+
 == [.underline]#Relationships#
 
 [plantuml,id='Regions_AZs',format="png",width="600px"]
@@ -60,8 +77,47 @@ image::https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-architect
 
 Datacenters }|-|| AzureRegion
 
+Datacenters }|--|| AvailabilityZone
 
+AvailabilityZone }o-|| AzureRegion
 
 @enduml 
 
 ---- 
+
+
+== [.underline]#Exercise#
+
+* Azure App Service is solution to host HTTP based apps. [Web applications]
+
+* Azure Marketplace is an online store for applications.
+* Applications in Azure Marketplace are certified and optimised to run in Azure.
+
+Steps : 
+
+[plantuml,id="WordPressApp",format="png",width="600px"]
+---- 
+
+@startuml
+
+(*) --> "Initialise Sandbox."
+--> "Open Azure portal"
+if "Existing Azure account" then
+    --> [true] "Switch directory to Learn sandbox"
+else
+    --> "Continue"
+endif 
+
+--> "Create ResourceGroup"
+--
+
+
+
+@enduml
+
+---- 
+
+
+[#img-next]
+[caption="Next ",link=./regions_AZs.adoc]
+image::../images/Next.jpg[Next,200,100]

@@ -130,3 +130,7 @@ ARM can be accessed via :
 
 |===
 
+
+[#img-next]
+[caption="Next ",link=./regions_AZs.adoc]
+image::../images/Next.jpg[Next,200,100]
